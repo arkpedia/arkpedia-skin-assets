@@ -1,0 +1,66 @@
+name: Sync artwork and responsive variants
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Global reset is 11:00 UTC. Run after the upstream mirrors have had time
+    # to publish their own refreshes.
+    - cron: "47 14 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-artwork
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Check upstream revision
+        id: upstream
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest=$(gh api repos/yuanyan3060/ArknightsGameResource/commits/main --jq .sha)
+          current=$(jq -r '.sourceCommit // ""' source.json)
+          echo "sha=$latest" >> "$GITHUB_OUTPUT"
+          if [ "$latest" = "$current" ]; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: actions/checkout@v4
+        if: steps.upstream.outputs.changed == 'true'
+        with:
+          repository: yuanyan3060/ArknightsGameResource
+          ref: ${{ steps.upstream.outputs.sha }}
+          path: upstream
+          filter: blob:none
+          sparse-checkout: skin
+
+      - uses: actions/setup-python@v5
+        if: steps.upstream.outputs.changed == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Build originals and variants
+        if: steps.upstream.outputs.changed == 'true'
+        run: |
+          python -m pip install pillow pillow-avif-plugin
+          python scripts/build_artwork_variants.py --source-root upstream --source-commit "${{ steps.upstream.outputs.sha }}"
+
+      - name: Publish refresh
+        if: steps.upstream.outputs.changed == 'true'
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add asset-manifest.json asset-source-map.json source.json originals variants
+          git diff --cached --quiet && exit 0
+          git commit -m "Sync artwork from ${SOURCE_SHA::12}"
+          git push
+        env:
+          SOURCE_SHA: ${{ steps.upstream.outputs.sha }}
