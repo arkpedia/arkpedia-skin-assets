@@ -1,1 +1,4 @@
 source-map-diagnostics.json
+
+__pycache__/
+*.pyc
