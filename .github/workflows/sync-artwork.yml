@@ -17,6 +17,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - name: Check upstream revision
         id: upstream
@@ -52,6 +53,14 @@ jobs:
         run: |
           python -m pip install pillow pillow-avif-plugin
           python scripts/build_artwork_variants.py --source-root upstream --source-commit "${{ steps.upstream.outputs.sha }}"
+
+      - name: Stage refreshed media
+        if: steps.upstream.outputs.changed == 'true'
+        run: git add asset-manifest.json asset-source-map.json source.json originals variants *-skins
+
+      - name: Validate inventory and changed images
+        if: steps.upstream.outputs.changed == 'true'
+        run: python scripts/validate_images.py --staged
 
       - name: Publish refresh
         if: steps.upstream.outputs.changed == 'true'

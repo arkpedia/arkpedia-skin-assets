@@ -148,7 +148,7 @@ def main() -> None:
     # use the root-level files collection as the availability index.
     files: dict[str, dict] = {}
     for path in sorted(ROOT.rglob("*")):
-        if not path.is_file() or ".git" in path.parts:
+        if not path.is_file() or ".git" in path.parts or path.is_relative_to(args.source_root.resolve()) or ".cache" in path.parts:
             continue
         relative = path.relative_to(ROOT).as_posix()
         if relative.startswith(("originals/", "variants/", "scripts/", ".github/")):
