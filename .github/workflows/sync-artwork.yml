@@ -3,9 +3,8 @@ name: Sync artwork and responsive variants
 on:
   workflow_dispatch:
   schedule:
-    # Global reset is 11:00 UTC. Run after the upstream mirrors have had time
-    # to publish their own refreshes.
-    - cron: "47 14 * * *"
+    # 5h 07m after the 11:00 UTC Global reset; allow post-patch mirrors to update.
+    - cron: '7 16 * * *'
 
 permissions:
   contents: write
