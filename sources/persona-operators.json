@@ -1,0 +1,130 @@
+{
+  "sourceRepository": "https://github.com/yuanyan3060/ArknightsGameResource",
+  "sourceCommit": "66dc23ad2208f14e2e3c31401ca9ce8d40b95550",
+  "assets": [
+    {
+      "path": "skill-icons/Makoto Yuki - Harp of Orpheus.webp",
+      "source": "skill/skill_icon_skchr_makoto_1.png"
+    },
+    {
+      "path": "skill-icons/Makoto Yuki - Chains of Thanatos.webp",
+      "source": "skill/skill_icon_skchr_makoto_2.png"
+    },
+    {
+      "path": "skill-icons/Makoto Yuki - Dawn-Piercing Blade.webp",
+      "source": "skill/skill_icon_skchr_makoto_3.png"
+    },
+    {
+      "path": "base-skill-icons/Makoto Yuki - Leadership Charisma.webp",
+      "source": "building_skill/bskill_ctrl_p_spd_p3r.png"
+    },
+    {
+      "path": "base-skill-icons/Makoto Yuki - The Meaning of Bonds.webp",
+      "source": "building_skill/bskill_man_p3r.png"
+    },
+    {
+      "path": "six-star-icons/Makoto Yuki - Base.webp",
+      "source": "avatar/char_4217_makoto.png"
+    },
+    {
+      "path": "six-star-skins/Makoto Yuki - Base.webp",
+      "source": "skin/char_4217_makoto_1b.png"
+    },
+    {
+      "path": "six-star-icons/Makoto Yuki - Elite 2.webp",
+      "source": "avatar/char_4217_makoto_2.png"
+    },
+    {
+      "path": "six-star-skins/Makoto Yuki - Elite 2.webp",
+      "source": "skin/char_4217_makoto_2b.png"
+    },
+    {
+      "path": "skill-icons/Aegis - Orgia Mode.webp",
+      "source": "skill/skill_icon_skchr_aigis_1.png"
+    },
+    {
+      "path": "skill-icons/Aegis - Maximum Firepower.webp",
+      "source": "skill/skill_icon_skchr_aigis_2.png"
+    },
+    {
+      "path": "base-skill-icons/Aegis - Mechanical Engineering.webp",
+      "source": "building_skill/bskill_pow_spd_p3r.png"
+    },
+    {
+      "path": "base-skill-icons/Aegis - Cross-Disciplinary Communication.webp",
+      "source": "building_skill/bskill_meet_p3r_bd.png"
+    },
+    {
+      "path": "five-star-icons/Aegis - Base.webp",
+      "source": "avatar/char_4218_aigis.png"
+    },
+    {
+      "path": "five-star-skins/Aegis - Base.webp",
+      "source": "skin/char_4218_aigis_1b.png"
+    },
+    {
+      "path": "five-star-icons/Aegis - Elite 2.webp",
+      "source": "avatar/char_4218_aigis_2.png"
+    },
+    {
+      "path": "five-star-skins/Aegis - Elite 2.webp",
+      "source": "skin/char_4218_aigis_2b.png"
+    },
+    {
+      "path": "skill-icons/Yukari Takeba - Cyclone Arrow.webp",
+      "source": "skill/skill_icon_skchr_yukari_1.png"
+    },
+    {
+      "path": "skill-icons/Yukari Takeba - Tranquility.webp",
+      "source": "skill/skill_icon_skchr_yukari_2.png"
+    },
+    {
+      "path": "base-skill-icons/Yukari Takeba - Independent Investigation.webp",
+      "source": "building_skill/bskill_hire_p3r.png"
+    },
+    {
+      "path": "base-skill-icons/Yukari Takeba - Sensible Part-Time Work.webp",
+      "source": "building_skill/bskill_train_p3r.png"
+    },
+    {
+      "path": "five-star-icons/Yukari Takeba - Base.webp",
+      "source": "avatar/char_4219_yukari.png"
+    },
+    {
+      "path": "five-star-skins/Yukari Takeba - Base.webp",
+      "source": "skin/char_4219_yukari_1b.png"
+    },
+    {
+      "path": "five-star-icons/Yukari Takeba - Elite 2.webp",
+      "source": "avatar/char_4219_yukari_2.png"
+    },
+    {
+      "path": "five-star-skins/Yukari Takeba - Elite 2.webp",
+      "source": "skin/char_4219_yukari_2b.png"
+    },
+    {
+      "path": "base-skill-icons/Koromaru - Fluffy Comfort.webp",
+      "source": "building_skill/bskill_dorm_p3r.png"
+    },
+    {
+      "path": "base-skill-icons/Koromaru - Koromaru's Gratitude.webp",
+      "source": "building_skill/bskill_meet_koromaru.png"
+    },
+    {
+      "path": "one-star-icons/Koromaru - Base.webp",
+      "source": "avatar/char_4220_kormr.png"
+    },
+    {
+      "path": "one-star-skins/Koromaru - Base.webp",
+      "source": "skin/char_4220_kormr_1b.png"
+    },
+    {
+      "path": "five-star-skins/Record Keeper - The Lands Illuminated.webp",
+      "source": "skin/char_4196_reckpr_yun#12b.png"
+    },
+    {
+      "path": "five-star-icons/Record Keeper - The Lands Illuminated.webp",
+      "source": "avatar/char_4196_reckpr_yun#12.png"
+    }
+  ]
+}
