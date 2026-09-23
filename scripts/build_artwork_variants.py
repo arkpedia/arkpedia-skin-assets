@@ -165,6 +165,14 @@ def main() -> None:
         }
         if relative in detail:
             row.update(detail[relative])
+        elif relative not in mapping["files"]:
+            # Hand-added artwork (sources/planner-outfits.md) stays out of the
+            # source map on purpose: mapping it would replace its reviewed bytes
+            # with the upstream render.  Nothing regenerates its original or
+            # variants, so carry their committed rows forward; dropping them
+            # leaves those files unlisted and fails validation.
+            previous = previous_files.get(relative, {})
+            row.update({key: previous[key] for key in ("original", "variants") if previous.get(key)})
         files[relative] = row
 
     manifest = {
