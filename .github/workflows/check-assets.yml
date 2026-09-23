@@ -20,3 +20,6 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install pillow
       - run: python scripts/validate_images.py
+      # The daily sync rebuilds the manifest instead of reusing it; fail here,
+      # not a day later, when that rebuild would leave committed media unlisted.
+      - run: python scripts/build_artwork_variants.py --verify

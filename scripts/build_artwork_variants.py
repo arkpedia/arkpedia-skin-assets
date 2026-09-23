@@ -13,6 +13,7 @@ import hashlib
 import json
 import os
 import shutil
+import subprocess
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
@@ -26,6 +27,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_WIDTHS = (320, 768, 1280)
+ROOT_SUFFIXES = {".webp", ".png", ".jpg", ".jpeg", ".avif"}
 
 
 def sha256(path: Path) -> str:
@@ -39,6 +41,85 @@ def sha256(path: Path) -> str:
 def rendition_path(asset: str, format_name: str, width: int) -> Path:
     suffix = ".avif" if format_name == "avif" else ".webp"
     return ROOT / "variants" / format_name / f"w{width}" / Path(asset).with_suffix(suffix)
+
+
+def is_root_asset(relative: str) -> bool:
+    """Whether the rebuild lists a repository path as a root manifest row."""
+    if relative.startswith(("originals/", "variants/", "scripts/", ".github/")):
+        return False
+    return Path(relative).suffix.lower() in ROOT_SUFFIXES
+
+
+def manifest_files(
+    root_rows: dict[str, dict],
+    detail: dict[str, dict],
+    mapping: dict,
+    previous_files: dict[str, dict],
+) -> dict[str, dict]:
+    """Attach the nested original/variants rows to each published root row."""
+    files: dict[str, dict] = {}
+    for relative, row in sorted(root_rows.items()):
+        if relative in detail:
+            row = {**row, **detail[relative]}
+        elif relative not in mapping["files"]:
+            # Hand-added artwork (sources/planner-outfits.md) stays out of the
+            # source map on purpose: mapping it would replace its reviewed bytes
+            # with the upstream render.  Nothing regenerates its original or
+            # variants, so carry their committed rows forward; dropping them
+            # leaves those files unlisted and fails validation.
+            previous = previous_files.get(relative, {})
+            row = {**row, **{key: previous[key] for key in ("original", "variants") if previous.get(key)}}
+        files[relative] = row
+    return files
+
+
+def listed_paths(files: dict[str, dict]) -> set[str]:
+    """Every path a manifest lists, expanded the way validate_images.py does."""
+    paths = set(files)
+    for row in files.values():
+        if row.get("original"):
+            paths.add(row["original"]["path"])
+        for widths in row.get("variants", {}).values():
+            paths.update(variant["path"] for variant in widths.values())
+    return paths
+
+
+def verify_rebuild(mapping: dict, previous_files: dict[str, dict]) -> None:
+    """Fail when a rebuild of the committed state would stop listing tracked media.
+
+    The daily sync regenerates the manifest from scratch and then runs
+    validate_images.py --staged, so a row the rebuild drops turns that job red
+    even though the committed manifest still validates.  This replays the same
+    listing at push time without upstream artwork or media bytes: git supplies
+    the inventory and, as when upstream is unchanged, mapped artwork keeps its
+    previous original/variants rows.
+    """
+    # Imported here, not at module level: arkpedia's publish-catalogue-assets.py
+    # loads this file by path for build_one, without scripts/ on sys.path.
+    from validate_images import MEDIA
+
+    tracked = {
+        path
+        for path in subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode().split("\0")
+        if path
+    }
+    root_rows: dict[str, dict] = {relative: {} for relative in tracked if is_root_asset(relative)}
+    detail: dict[str, dict] = {}
+    for asset in mapping["files"]:
+        previous = previous_files.get(asset, {})
+        if previous.get("original") and previous.get("variants"):
+            detail[asset] = {"original": previous["original"], "variants": previous["variants"]}
+    listed = listed_paths(manifest_files(root_rows, detail, mapping, previous_files))
+    media = {path for path in tracked if Path(path).suffix.lower() in MEDIA and not path.startswith("scripts/")}
+    missing = listed - tracked
+    unlisted = media - listed
+    dropped = listed_paths(previous_files) - listed
+    if missing or unlisted or dropped:
+        raise ValueError(
+            f"Rebuilt manifest would not match the repository: missing={sorted(missing)[:12]}, "
+            f"unlisted={sorted(unlisted)[:12]}, dropped={sorted(dropped)[:12]}"
+        )
+    print(f"Verified that a rebuild lists all {len(listed)} tracked media paths.")
 
 
 def build_one(task: tuple[str, str, tuple[int, ...]]) -> tuple[str, dict]:
@@ -86,16 +167,26 @@ def build_one(task: tuple[str, str, tuple[int, ...]]) -> tuple[str, dict]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source-root", required=True, type=Path)
-    parser.add_argument("--source-commit", required=True)
+    parser.add_argument("--source-root", type=Path)
+    parser.add_argument("--source-commit")
     parser.add_argument("--jobs", type=int, default=max(1, min(8, os.cpu_count() or 1)))
     parser.add_argument("--widths", type=int, nargs="+", default=DEFAULT_WIDTHS)
+    parser.add_argument(
+        "--verify",
+        action="store_true",
+        help="check that rebuilding the committed state keeps every tracked media path listed",
+    )
     args = parser.parse_args()
+    if not args.verify and (args.source_root is None or args.source_commit is None):
+        parser.error("--source-root and --source-commit are required unless --verify is given")
 
     mapping = json.loads((ROOT / "asset-source-map.json").read_text())
     manifest_path = ROOT / "asset-manifest.json"
     previous_manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     previous_files = previous_manifest.get("files", {})
+    if args.verify:
+        verify_rebuild(mapping, previous_files)
+        return
     widths = tuple(sorted(set(args.widths)))
     tasks: list[tuple[str, str, tuple[int, ...]]] = []
     detail: dict[str, dict] = {}
@@ -146,26 +237,22 @@ def main() -> None:
 
     # Keep non-artwork files visible in the manifest as well.  Existing callers
     # use the root-level files collection as the availability index.
-    files: dict[str, dict] = {}
+    root_rows: dict[str, dict] = {}
     for path in sorted(ROOT.rglob("*")):
         if not path.is_file() or ".git" in path.parts or path.is_relative_to(args.source_root.resolve()) or ".cache" in path.parts:
             continue
         relative = path.relative_to(ROOT).as_posix()
-        if relative.startswith(("originals/", "variants/", "scripts/", ".github/")):
-            continue
-        if path.suffix.lower() not in {".webp", ".png", ".jpg", ".jpeg", ".avif"}:
+        if not is_root_asset(relative):
             continue
         with Image.open(path) as image:
             width, height = image.size
-        row = {
+        root_rows[relative] = {
             "bytes": path.stat().st_size,
             "sha256": sha256(path),
             "width": width,
             "height": height,
         }
-        if relative in detail:
-            row.update(detail[relative])
-        files[relative] = row
+    files = manifest_files(root_rows, detail, mapping, previous_files)
 
     manifest = {
         "version": 2,
