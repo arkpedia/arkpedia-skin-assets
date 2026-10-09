@@ -6,5 +6,41 @@
   "five-star-skins/Spuria - 慵怠哼唱.webp": {
     "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/d89e2600c7214e13ab1042a616a9f690f7f5dd95/skin/char_4015_spuria_epoque%2358b.png",
     "sha256": "9cd1ee2c3afd9c7cbee455e42ab45a57ce7ad7acc28726d13767059b4e819cd7"
+  },
+  "five-star-skins/de Toledo - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_393_toledo_1b.png",
+    "sha256": "133254eaa2d131f0b4d207cdb31f13ad0a19871aebcff7ca65699e0ee1dd61fe"
+  },
+  "five-star-skins/de Toledo - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_393_toledo_2b.png",
+    "sha256": "31259f45c5686a9263673893520e5655d7eeb33b1d7ee884175d96faa1e31153"
+  },
+  "five-star-skins/Homebound - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_4232_hbound_1b.png",
+    "sha256": "9d96d813fe6803aeea8b362b8f7bde67e6951c284d9d890a8f4427d0506504a2"
+  },
+  "five-star-skins/Homebound - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_4232_hbound_2b.png",
+    "sha256": "c0256679096820a2dc78c42effa4fbfcd4c633d67063ffa9a55ec23df64c9857"
+  },
+  "five-star-skins/Leto - 来日欢歌.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_194_leto_sightseer%234b.png",
+    "sha256": "3ea97c53ef5447a8e5162ebb2873f60ecbdfd8b91e17b7a4f8a9cabaf21fcb6a"
+  },
+  "six-star-skins/Clementia - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_4231_clemnt_1b.png",
+    "sha256": "47bac2db54d1b3c0639016020c370dbd8d37c61558ad0bac4f71a8d5e1da3854"
+  },
+  "six-star-skins/Clementia - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_4231_clemnt_2b.png",
+    "sha256": "9b822b15ce1620be3a39788d1779d8b98b91f29e05a783e1a44294ec86b411c7"
+  },
+  "six-star-skins/Mantra - 万籁俱寂.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_4204_mantra_sightseer%234b.png",
+    "sha256": "40ae247eeb7872d6ba1c1469ef6cd4b0b85316576e484cc4c96a9974ae4d4eba"
+  },
+  "six-star-skins/Tragodia - 真我自扼.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_1042_phatm2_sightseer%234b.png",
+    "sha256": "923668c5a421925d0922d6232d43cf28b13ad64ea00b715d4d13eb7342738156"
   }
 }
