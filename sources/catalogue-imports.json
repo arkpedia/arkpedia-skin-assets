@@ -42,5 +42,21 @@
   "six-star-skins/Tragodia - 真我自扼.webp": {
     "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_1042_phatm2_sightseer%234b.png",
     "sha256": "923668c5a421925d0922d6232d43cf28b13ad64ea00b715d4d13eb7342738156"
+  },
+  "one-star-skins/GALLUS² - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_4227_gallus_1b.png",
+    "sha256": "99f1b261b7577b3efbe43baae1249d060d4eaa1c83113fbdf3676bb5d2aecd51"
+  },
+  "six-star-skins/Kal'tsit Esperanta - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_1052_kalts2_1b.png",
+    "sha256": "4e959f1e4d7d4712f560ed13fe73f079eaa4bb62cc2f00b62c4d6a3249f22b59"
+  },
+  "six-star-skins/Kal'tsit Esperanta - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_1052_kalts2_2b.png",
+    "sha256": "b87a25e19b5c041497cb80792dd201aad448ce8c0f747a8be55111890788d7db"
+  },
+  "six-star-skins/Mon3tr - Sharpened Claws.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9bf239661e37766fba585806fb9fa67e79bb679e/skin/char_4179_monstr_boc%2311b.png",
+    "sha256": "dc31c8086fc86591b5d84cb06f0b5a95d8f0ab6101c6fb1f8ee5b80acd8c8e49"
   }
 }
