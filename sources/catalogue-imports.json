@@ -70,5 +70,73 @@
   "six-star-skins/Swire the Elegant Wit - 盛世之象.webp": {
     "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/70ee919165089e0ac83e8d56fdee7263e2dd5f24/skin/char_1033_swire2_nlc%231b.png",
     "sha256": "b77fd838b904766576efddb0c719ae0a2f8cf5dea4c3a510546e2f60461eb665"
+  },
+  "five-star-skins/Alanna - 赤土拉力.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4178_alanna_race%233b.png",
+    "sha256": "e12a4c4715ff1cd21ac8912079faafdb05d52b3e8eb350ebbd8ab0da8520694c"
+  },
+  "five-star-skins/Caleido - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4169_caledo_1b.png",
+    "sha256": "49c560a9b7363452436c45ef8f84dea75d0ac5458b3fa199edca75e27c9a4dd2"
+  },
+  "five-star-skins/Caleido - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4169_caledo_2b.png",
+    "sha256": "695e90c7ac9f6ab6a693edc47679a3b8e116ca156db8ba81925a6335b1897bf5"
+  },
+  "five-star-skins/Catherine - 暖冬教室.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4162_cathy_kitchen%235b.png",
+    "sha256": "6b3f6992f5d1eb7e4cb2bcfd1c58a66b16030a3261744b03c29728845b606c76"
+  },
+  "five-star-skins/Ольга - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4245_alga_1b.png",
+    "sha256": "98ee800589404630cb68161b8b1dbdf85d52e97307fafeb42a93c9696c114f3e"
+  },
+  "five-star-skins/Ольга - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4245_alga_2b.png",
+    "sha256": "fe7db1ad949b4fb991fa95b9b4d2a214ef5021efdfb7c5a8b8f659a2516db71b"
+  },
+  "four-star-skins/Herdbells - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4170_hdbell_1b.png",
+    "sha256": "7e92c6b30993db9830346330855a889a7462dd6c5b4e92444298fcc03a4c92e2"
+  },
+  "four-star-skins/Herdbells - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4170_hdbell_2b.png",
+    "sha256": "a49cf7c97514c5ca3d988b5e4c5e87da03d213c4a910684c3017de62ee91f12a"
+  },
+  "six-star-skins/Horn - 锋光初现.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4039_horn_epoque%2359b.png",
+    "sha256": "4b824c94826ffdbadeab0e35188647b29c5bb441e603a7f9962634ad213fae04"
+  },
+  "six-star-skins/SilverAsh the Reignfrost - 雪覆伦城.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_1045_svash2_sale%2320b.png",
+    "sha256": "2e9476152ff8494db538bf5e48acc5be812e602c2f1650420df87a10a8975c59"
+  },
+  "six-star-skins/Talulah - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4247_oxi_1b.png",
+    "sha256": "fedb7d1f1e0ef3aa810bddf18ebd38d1977d48c83cf33076e169cc3c79995942"
+  },
+  "six-star-skins/Talulah - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4247_oxi_2b.png",
+    "sha256": "4225e76018a6eab13984ccd0bba3ed48b468d80ff42219036c8cecaad4e1068a"
+  },
+  "six-star-skins/Viviana - 还愿礼.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4098_vvana_epoque%2359b.png",
+    "sha256": "036681ada2c7cfca22689d609c78b2c6f1f5408416e96f97a8e0ac5f3e183651"
+  },
+  "six-star-skins/Территория - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4246_dminon_1b.png",
+    "sha256": "198424b6ae3959ddbb97273a122afa14f912c6f1a5c70b5f457c5205f83b0579"
+  },
+  "six-star-skins/Территория - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4246_dminon_2b.png",
+    "sha256": "1a54f59e14a20e59de7abcfcb29c6555ca5997d0fd756384fe8b3aca1462028c"
+  },
+  "six-star-skins/Тоска - Base.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4244_tocka_1b.png",
+    "sha256": "a032958ce71219f64b64ff41670d5ffc3086f28de0ea64663d49e2e952e694c9"
+  },
+  "six-star-skins/Тоска - Elite 2.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4244_tocka_2b.png",
+    "sha256": "0baf1dafaf75a2045006e6ad60d0d7a0499f55c815c919b6954ee1af3d1a7f84"
   }
 }
