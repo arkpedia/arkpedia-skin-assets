@@ -138,5 +138,17 @@
   "six-star-skins/Тоска - Elite 2.webp": {
     "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/9473346fe047eecb625cabb5d10611a12657f479/skin/char_4244_tocka_2b.png",
     "sha256": "0baf1dafaf75a2045006e6ad60d0d7a0499f55c815c919b6954ee1af3d1a7f84"
+  },
+  "one-star-skins/Rhodes Island Recon - Camping Time!.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/18e73996a5a16f78a0af7773a2d2a0f4991ac6ba/skin/char_4215_buddy_mh%232b.png",
+    "sha256": "01b84d99609cbf2bb15a6e6aee4a41579bb30d047fc3e1f8aa0fcb70e1cd1316"
+  },
+  "six-star-skins/Astgenne the Lightchaser - 暗能质子.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/18e73996a5a16f78a0af7773a2d2a0f4991ac6ba/skin/char_1047_halo2_striker%234b.png",
+    "sha256": "0c4a01a5e3bdfee7a2dc7ee4e68bc146ecc817017bd5b4ffbce10b62c6b49992"
+  },
+  "six-star-skins/Magallan - 绿影之下.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/18e73996a5a16f78a0af7773a2d2a0f4991ac6ba/skin/char_248_mgllan_epoque%2360b.png",
+    "sha256": "f1ae97362c104147c78e73684f2ab7e955ddd061a9d07d1816ed2502bbbdd177"
   }
 }
