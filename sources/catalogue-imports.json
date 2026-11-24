@@ -150,5 +150,13 @@
   "six-star-skins/Magallan - 绿影之下.webp": {
     "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/18e73996a5a16f78a0af7773a2d2a0f4991ac6ba/skin/char_248_mgllan_epoque%2360b.png",
     "sha256": "f1ae97362c104147c78e73684f2ab7e955ddd061a9d07d1816ed2502bbbdd177"
+  },
+  "five-star-skins/Vetochki - Scent of the Mist.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/e03bf6e75142ef9a45df5c9742c8a037c465d6e7/skin/char_4207_branch_yun%2310b.png",
+    "sha256": "cc2149f166c161e6e8693e85e6c70e58d6809728b3d689d6bb8263d379970bbb"
+  },
+  "five-star-skins/Wulfenite - Bouncing Rhythms.webp": {
+    "url": "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/e03bf6e75142ef9a45df5c9742c8a037c465d6e7/skin/char_4171_wulfen_marthe%2314b.png",
+    "sha256": "40918208f89ed8bf5d9d8e6557ff0c63b1c8fdd475caa9ae777815e0edd68504"
   }
 }
